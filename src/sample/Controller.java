@@ -1,6 +1,8 @@
 package sample;
 
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -54,10 +56,16 @@ public class Controller {
         heightCol.setCellValueFactory(new PropertyValueFactory<Person, Integer>("height"));
 
         table.setItems(data);
+
+        table.getSelectionModel().selectedItemProperty().addListener((ChangeListener<Object>)
+                (observable, oldValue, newValue) -> index.set(data.indexOf(newValue)));
     }
 
 
-    final ObservableList<Person> data = FXCollections.observableArrayList();
+    private final ObservableList<Person> data = FXCollections.observableArrayList();
+
+    private final SimpleIntegerProperty index =  new SimpleIntegerProperty();
+
 
 
     public void handleClick(ActionEvent actionEvent) {
@@ -66,6 +74,15 @@ public class Controller {
                 pesel.getText(), Integer.parseInt(height.getText()));
 
         data.add(submit);
+    }
+
+    public void onDeleteItem (ActionEvent event) {
+        int i = index.get();
+        if (i > -1) {
+            data.remove(i);
+            table.getSelectionModel().clearSelection();
+        }
+
     }
 }
 
