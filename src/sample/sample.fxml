@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="579.0" prefWidth="757.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="539.0" minHeight="10.0" prefHeight="480.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="284.0" minHeight="10.0" prefHeight="99.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+   <children>
+      <Button fx:id="button" mnemonicParsing="false" onAction="#handleClick" text="SUBMIT" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+      <TableView fx:id="table" prefHeight="472.0" prefWidth="398.0" GridPane.columnIndex="1">
+        <columns>
+          <TableColumn fx:id="nameCol" maxWidth="1.7976931348623157E308" minWidth="60.0" prefWidth="-1.0" resizable="false" text="NAME" />
+          <TableColumn fx:id="surnameCol" maxWidth="1.7976931348623157E308" minWidth="60.0" prefWidth="78.0" resizable="false" text="SURNAME" />
+            <TableColumn fx:id="ageCol" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="30.0" resizable="false" text="AGE" />
+            <TableColumn fx:id="peselCol" maxWidth="1.7976931348623157E308" minWidth="60.0" prefWidth="83.0" resizable="false" text="PESEL" />
+            <TableColumn fx:id="heightCol" maxWidth="1.7976931348623157E308" minWidth="12.0" prefWidth="53.0" resizable="false" text="HEIGHT" />
+            <TableColumn maxWidth="1.7976931348623157E308" minWidth="40.0" prefWidth="53.0" resizable="false" text="DELETE" />
+        </columns>
+         <GridPane.margin>
+            <Insets right="20.0" top="20.0" />
+         </GridPane.margin>
+      </TableView>
+      <VBox prefHeight="493.0" prefWidth="379.0">
+         <children>
+            <TextField fx:id="name" promptText="name">
+               <VBox.margin>
+                  <Insets bottom="50.0" left="40.0" right="40.0" top="40.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="surname" promptText="surname">
+               <VBox.margin>
+                  <Insets bottom="50.0" left="40.0" right="40.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="age" promptText="age">
+               <VBox.margin>
+                  <Insets bottom="50.0" left="40.0" right="40.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="pesel" promptText="pesel">
+               <VBox.margin>
+                  <Insets bottom="50.0" left="40.0" right="40.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="height" promptText="height">
+               <VBox.margin>
+                  <Insets bottom="50.0" left="40.0" right="40.0" />
+               </VBox.margin>
+            </TextField>
+         </children>
+      </VBox>
+   </children>
+</GridPane>
