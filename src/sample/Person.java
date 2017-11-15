@@ -19,6 +19,8 @@ public class Person {
         this.height = new SimpleIntegerProperty(height);
     }
 
+    //settery i gettery, ale na razie nie są wykorzystywane
+
     public String getName() {
         return name.get();
     }

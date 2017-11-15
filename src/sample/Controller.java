@@ -25,28 +25,9 @@ public class Controller {
     public TableColumn peselCol;
     public TableColumn heightCol;
 
-
-    /*public void initialize() {
-        for (TableColumn<String, ?> column : table.getColumns()) {
-            if ("nameCol".equals(column.getId())) {
-                TableColumn<String, String> nameColumn = (TableColumn<String, String>) column;
-                nameColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue()));
-            } else if ("surnameCol".equals(column.getId())) {
-                TableColumn<String, String> surnameColumn = (TableColumn<String, String>) column;
-                surnameColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue()));
-            } else if ("ageCol".equals(column.getId())) {
-                TableColumn<String, String> ageColumn = (TableColumn<String, String>) column;
-                ageColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue()));
-            } else if ("peselCol".equals(column.getId())) {
-                TableColumn<String, String> peselColumn = (TableColumn<String, String>) column;
-                peselColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue()));
-            } else if ("heightCol".equals(column.getId())) {
-                TableColumn<String, String> heightColumn = (TableColumn<String, String>) column;
-                heightColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue()));
-            }
-        }
-    }
-    */
+    //ustawienia 'fabryki' dla konkretnych kolumn
+    //latwiej pesel na razie przechowywać jako String, bo na int jest za wielki. Gdybysmy chcieli go jakos wykorzystac
+    //to trzeba byloby uzyc albo typu Long albo zamieniac Stringa w int
 
     public void initialize(){
         nameCol.setCellValueFactory(new PropertyValueFactory<Person, String>("name"));
@@ -61,12 +42,13 @@ public class Controller {
                 (observable, oldValue, newValue) -> index.set(data.indexOf(newValue)));
     }
 
+    //tworzymy 'observableList' typu Person, ktorą bedzie sledzic nasza tabelka
 
     private final ObservableList<Person> data = FXCollections.observableArrayList();
 
+    //index na potrzeby przycisku delete (zeby wybrac wiersz do wykasowania)
+
     private final SimpleIntegerProperty index =  new SimpleIntegerProperty();
-
-
 
     public void handleClick(ActionEvent actionEvent) {
 

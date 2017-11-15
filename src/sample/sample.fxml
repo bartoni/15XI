@@ -25,10 +25,9 @@
         <columns>
           <TableColumn fx:id="nameCol" maxWidth="1.7976931348623157E308" minWidth="60.0" prefWidth="-1.0" resizable="false" text="NAME" />
           <TableColumn fx:id="surnameCol" maxWidth="1.7976931348623157E308" minWidth="60.0" prefWidth="78.0" resizable="false" text="SURNAME" />
-            <TableColumn fx:id="ageCol" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="30.0" resizable="false" text="AGE" />
-            <TableColumn fx:id="peselCol" maxWidth="1.7976931348623157E308" minWidth="60.0" prefWidth="83.0" resizable="false" text="PESEL" />
-            <TableColumn fx:id="heightCol" maxWidth="1.7976931348623157E308" minWidth="12.0" prefWidth="53.0" resizable="false" text="HEIGHT" />
-            <TableColumn maxWidth="1.7976931348623157E308" minWidth="40.0" prefWidth="53.0" resizable="false" text="DELETE" />
+            <TableColumn fx:id="ageCol" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="41.0" resizable="false" text="AGE" />
+            <TableColumn fx:id="peselCol" maxWidth="1.7976931348623157E308" minWidth="60.0" prefWidth="127.0" resizable="false" text="PESEL" />
+            <TableColumn fx:id="heightCol" maxWidth="1.7976931348623157E308" minWidth="12.0" prefWidth="51.0" resizable="false" text="HEIGHT" />
         </columns>
          <GridPane.margin>
             <Insets right="20.0" top="20.0" />
